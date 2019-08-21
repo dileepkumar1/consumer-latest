@@ -1,0 +1,173 @@
+<div class="table-section">
+    <div class="row">
+      <div class="col-12">
+            <nb-card>
+                <nb-card-body>
+                  <div class="right-btn-table">
+                        <button nbButton ghost><nb-icon icon="download" ></nb-icon></button>
+                        <button nbButton ghost ><nb-icon icon="maximize" ></nb-icon></button>
+                  </div>
+                  <nb-tabset>
+                    <nb-tab tabTitle="Waiting for response">
+                      <div>
+                          <div class="heading-table">
+                              <h4>Waiting For Response</h4>
+                              <div class="right_tag">
+                                  <div>
+                                      <input nbInput placeholder="Select tart Date and Date" [nbDatepicker]="formpicker">
+                                      <nb-rangepicker #formpicker></nb-rangepicker>
+                                  </div>
+                                  <div>
+                                      <input nbInput placeholder="Search Here">
+                                  </div>
+                              </div>
+                          </div>
+                          <table class="table_design" >
+                              <thead class="thead-light">
+                                <tr>
+                                  <!-- <th><nb-checkbox status="success"></nb-checkbox></th> -->
+                                  <th scope="col">Case ID</th>
+                                  <th scope="col">Type</th>
+                                  <th scope="col">Sub-type</th>
+                                  <th scope="col">Subject</th>
+                                  <th scope="col">Modal Classification</th>
+                                  <th scope="col">Date & Time</th>
+                                  <th scope="col">Action</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td scope="row">546567678</td>
+                                  <td>Account Related</td>
+                                  <td>Break Up Of Disbursed  Amount </td>
+                                  <td>complain about a loan.</td>
+                                  <td>Account related!!</td>
+                                  <td>24/04/2019 04:24 PM</td>
+                                  <td><button nbButton shape="round" size="small" status="success" (click)="open(dialog)">Review</button></td>
+                                </tr>
+                               </tbody>
+                              </table>
+                            <div class="pagination-main" aria-label="Page navigation example">
+                                <nb-select class="nb-select-tag" placeholder="shorting">
+                                    <nb-option value="1">0-10</nb-option>
+                                    <nb-option value="2">10-20</nb-option>
+                                    <nb-option value="3">20-30</nb-option>
+                                    <nb-option value="4">30-40</nb-option>
+                                </nb-select>
+                                <ul class="pagination justify-content-end">
+                                  <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                  </li>
+                                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                  <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                  </li>
+                                </ul>
+                            </div>
+                      </div>
+                      <ng-template #dialog let-data let-ref="dialogRef">
+                          <nb-card class="dialog_box">
+                              <nb-card-header>Action - Review: Case ID -27388599 | 24/04/2019 04:24 PM</nb-card-header>
+                              <nb-card-body>
+                                <div class="row">
+                                  <div class="col-sm-3">
+                                    <div class="form-group">
+                                      <label for="subject" class="label">Case ID</label>
+                                      <nb-select placeholder="Form control">
+                                        <nb-option value="1">New Design coming 1</nb-option>
+                                        <nb-option value="2">New Design coming 2</nb-option>
+                                        <nb-option value="3">New Design coming 3</nb-option>
+                                        <nb-option value="4">New Design coming 4</nb-option>
+                                      </nb-select>
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-3">
+                                    <div class="form-group">
+                                      <label for="date" class="label">Classification</label>
+                                      <nb-select placeholder="Form control">
+                                        <nb-option value="1">New Design coming 1</nb-option>
+                                        <nb-option value="2">New Design coming 2</nb-option>
+                                        <nb-option value="3">New Design coming 3</nb-option>
+                                        <nb-option value="4">New Design coming 4</nb-option>
+                                      </nb-select>
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-3">
+                                    <div class="form-group">
+                                      <label for="date" class="label">Status</label>
+                                      <nb-select placeholder="Form control">
+                                        <nb-option value="1">Correct</nb-option>
+                                        <nb-option value="2">Wrong</nb-option>
+                                      </nb-select>
+                                    </div>
+                                    </div>
+                                  <div class="col-sm-3">
+                                      <div class="form-group">
+                                        <label for="classification" class="label">Type</label>
+                                        <nb-select placeholder="Form control">
+                                                <nb-option value="1">Account Related</nb-option>
+                                                <nb-option value="1">Account Related</nb-option>
+                                                <nb-option value="1">Account Related</nb-option>
+                                                <nb-option value="1">Account Related</nb-option>
+                                        </nb-select>
+                                      </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="sub-classification" class="label">Subjection</label>
+                                            <nb-select placeholder="Form control" >
+                                              <input nbInput placeholder="account not working" >
+                                            </nb-select>
+                                          </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="template" class="label">Sub-Type</label>
+                                            <nb-select placeholder="Template" >
+                                                    <nb-option value="1">New Design coming 1</nb-option>
+                                                    <nb-option value="2">New Design coming 2</nb-option>
+                                                    <nb-option value="3">New Design coming 3</nb-option>
+                                                    <nb-option value="4">New Design coming 4</nb-option>
+                                            </nb-select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="sub-classification" class="label">Review Comments</label>
+                                            <textarea class="form-control" nbInput placeholder="Message"></textarea>
+                                            <label for="sub-classification" class="label">Limit:- 50 words</label>
+                                          </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="form-group">
+                                          <label for="sub-classification" class="label">Email body</label>
+                                          <textarea class="form-control" nbInput placeholder="" text="Hi,I am Salim Mukti from Kolkata, registered mobile no is (6785925081).Recently I have taken a bike through capital first finance,But I have some prblems to understand the method of interest calculation...So I try to contact with the capital first customer care(18605009900) but I didnt get connect.Thats why I compose a mail to connect. Please call me on this no.8777762319.please help me as soon as possible. Screen reader support enabled."></textarea>
+                                        </div>
+                                  </div>
+                                
+                                </div>
+                                <div class="bottom_btn">
+                                    <button type="submit" nbButton size="medium" (click)="ref.close()" status="info">Save</button>
+                                </div>
+                              </nb-card-body>
+                            </nb-card>
+                        </ng-template>
+                       
+                    </nb-tab>
+                    <nb-tab tabTitle="Exceptions">
+                      <p>List of <strong>orders</strong>.</p>
+                    </nb-tab>
+                    <nb-tab tabTitle="Autonomus" disabled>
+                      <p>List of <strong>transactions</strong>.</p>
+                    </nb-tab>
+                  </nb-tabset>
+              
+                </nb-card-body>
+              </nb-card>
+      </div>
+    </div>
+  </div>

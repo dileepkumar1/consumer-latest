@@ -1,0 +1,83 @@
+.login-section{
+    padding-top: 184px;
+
+    .section_card{
+        height: 100vh;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    nb-card{
+        max-width: 500px;
+        margin: auto;
+        /* height: 447px !important; */
+        /* margin-top: 124px; */
+        padding: 28px;
+    }
+    .login_fm{
+        margin: auto;
+        width: 100%;
+        max-width:400px;
+        text-align: center;
+
+        h2{
+            margin-bottom: 55px;
+            text-transform: uppercase;
+            color: #5a5761;
+
+            img{
+                width: 215px;
+            }
+        }
+    }
+    form{
+        input{
+            margin-top: 8px;
+            margin-bottom: 15px;
+        }
+
+        &:after{
+            display: block;
+            content: "";
+            clear: both;
+            height: 0px;
+        }
+        .mrtop{
+            margin-bottom: 20px;
+        }
+
+        .forgetpassword{
+            float:right;
+           margin-bottom: 0px;
+           margin-top:4px;
+        }
+        nb-checkbox{
+            float:left;
+        }
+
+        .login_btn{
+            line-height: 0px;
+            width: 100%;
+            display: block;
+            float: right;
+            &:after{
+                display: block;
+                content: "";
+                clear: both;
+                height: 0px;
+            }
+            button{
+                float: right;
+                margin-top: 19px;
+                padding: 10px 28px;
+
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+    }
+
+   
+}
+

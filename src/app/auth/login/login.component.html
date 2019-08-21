@@ -1,0 +1,27 @@
+
+<nb-layout class="login-section">
+    <nb-layout-column class="section_card">
+          <nb-card>
+              <nb-card-body>
+                  <div class="login_fm">
+                      <h2><img src="assets/img/logo.jpeg"></h2>
+                      
+                      <form>
+                          <input type="text" nbInput fullWidth fieldSize="medium"  placeholder="Email Address">
+                          <input type="text" nbInput fullWidth fieldSize="medium"   placeholder="Your Password" type="password">
+                          
+                              <div>
+                                      <nb-checkbox class="example-margin" >Remenber Me</nb-checkbox>
+                                      <p class="forgetpassword"><a href="#">Forget password</a></p>
+                              </div>
+                              <div class="login_btn mt-3">
+                                  <a nbButton fullWidth status="success" [routerLink]="['/home/dashboard']" >Login</a>
+                              </div>
+                      </form>
+                      
+                  </div>
+                </nb-card-body>
+              
+          </nb-card>
+    </nb-layout-column>
+</nb-layout>

@@ -1,0 +1,38 @@
+<nb-layout>    
+    <nb-layout-header  fixed >
+      <div class="left-logo">
+        <span class="nav-menu" (click)="toggle()">
+          <nb-icon icon="menu-2-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
+        </span>
+        <a class="navbar-brand" [routerLink]="['/home/dashboard']">   
+        <span class="logo"><img src="assets/img/logo.jpeg"></span> 
+          <!-- <img src="assets/images/logo.png"  class="d-inline-block align-top" (click)="toggle()" alt=""> -->
+        </a>
+        
+      </div>
+      <div class="top_menu">
+          <nb-actions size="small">
+              <nb-action icon="message-square-outline"
+                         badgeText="99+"
+                         badgeStatus="danger">
+              </nb-action>
+              <nb-action icon="bell-outline"
+                         badgeText="12"
+                         badgeStatus="warning">
+              </nb-action>
+              <nb-action icon="person-outline"
+                        badgeStatus="info">
+              </nb-action>
+            </nb-actions>
+      </div>
+      </nb-layout-header>
+  
+      <nb-sidebar>
+          <nb-menu [items]="items">
+          </nb-menu>
+      </nb-sidebar>
+  
+      <nb-layout-column>
+          <router-outlet ></router-outlet>   
+      </nb-layout-column>
+    </nb-layout>

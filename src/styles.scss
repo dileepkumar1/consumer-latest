@@ -1,0 +1,76 @@
+@import 'themes';
+
+@import '~@nebular/theme/styles/globals';
+
+@include nb-install() {
+  @include nb-theme-global();
+};
+
+// ----------------navigation Css--------------------//
+nav{
+    background-color:#9d1d27 !important;
+    height: 60px !important;
+}
+
+.top_menu{
+  nb-badge{
+      top: -16px !important;
+      right: 10px !important;
+  }
+  nb-action nb-icon {
+      color: #ffffff !important;
+      
+  }
+
+}
+
+nb-sidebar .scrollable{
+    padding-top:0px !important;
+}
+
+.nb-theme-default nb-tabset .tab.active .tab-link::before {
+    background-color: #9d1d27 !important;
+}
+
+//-------------------------- Dash Board Section -------------------------//
+.top_card{
+    .left_side{
+        background:#9d1d27;
+        i{g{fill:white;}}
+    }
+
+}
+
+//--------------------------- classification---------------//
+
+.table-section{
+    nb-tab{
+        padding: 13px 0px;
+    } 
+    
+    .nb-select-tag{
+        max-width: 200px !important;
+        float: left;
+    }
+}
+
+nb-select{
+    max-width: 100% !important;
+    display:block !important;
+}
+
+input, select, button, textarea{
+    &:hover, &:focus, &:Active{
+        outline: none !important;
+        box-shadow: none !important;
+    }
+}
+
+.nb-theme-default nb-menu .menu-item:nth-child(1) a,.nb-theme-default nb-menu .menu-item:nth-child(1) .menu-icon{
+    color:#9d1d27 !important;
+}
+
+.bottom_btn button{
+    background: #9d1d27 !important;
+    border-color: #9d1d27 !important;
+}

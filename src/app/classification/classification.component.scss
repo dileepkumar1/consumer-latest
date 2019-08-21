@@ -1,0 +1,108 @@
+button:focus{
+    outline: none;
+    box-shadow: none;
+}
+.table_design{
+    width: 100%;
+    padding: 0px 10px;
+    border-collapse: collapse;
+
+    tr td{
+        padding: 10px 5px;
+        border-bottom: 1px solid #e4e4e4;
+        
+        
+        // &:last-child{
+        //     border-bottom: none;
+        // }
+    }
+
+    tr{
+         th{
+        text-transform: uppercase;
+        border-bottom: 1px solid #e4e4e4;
+        padding: 15px 2px;
+
+        }
+
+        &:nth-child{
+            border-bottom: 2px solid #e4e4e4;
+        }
+    }
+
+}
+
+.card-body{
+    padding: 5px 0px !important;
+}
+nb-card-header{
+    padding: 15px;
+}
+.table-btn{
+    button{
+        border-radius: 0px;
+        margin-right: 10px;
+        padding: 11px;
+    }  
+}
+
+.right-btn-table{
+    text-align: right;
+    position: absolute;
+    right: 20px;
+
+
+    button{
+      
+        margin-left: 10px;
+    }
+}
+
+.heading-table{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e4e4e4;
+    padding: 13px 0px;
+    padding-top: 0px;
+    h4{
+        flex: 0 0 50%;
+        text-transform: uppercase;
+        font-size: 17px;
+        color: #4d4d58 !important;
+    }
+
+    .right_tag{
+        flex: 0 0 50%;
+        display: flex;
+        justify-content: flex-end;
+
+        div{
+            margin-left: 15px;
+        }
+    }
+}
+
+.pagination-main{
+    padding-top: 30px;
+}
+
+.dialog_box{
+    margin: 35px;
+
+    .label {
+        text-transform: uppercase;  
+    }
+    textarea{
+        height: 250px;
+        max-width:100% !important;
+    }
+    select, option{
+        color: #8f9bb3;
+    }
+    .bottom_btn{
+        text-align: right;
+        button{
+            margin-left: 10px
+        }
+    }
+}
