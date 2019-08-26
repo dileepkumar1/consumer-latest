@@ -66,11 +66,19 @@ input, select, button, textarea{
     }
 }
 
-.nb-theme-default nb-menu .menu-item:nth-child(1) a,.nb-theme-default nb-menu .menu-item:nth-child(1) .menu-icon{
+.nb-theme-default nb-menu .menu-item:nth-child(1) a,.nb-theme-default nb-menu .menu-item:nth-child(1) .menu-icon, .tab.active .tab-link{
     color:#9d1d27 !important;
+}
+.right-btn-table nb-icon{
+    color:white;
 }
 
 .bottom_btn button{
     background: #9d1d27 !important;
+    border-color: #9d1d27 !important;
+}
+
+.status-primary, .status-success {
+    background-color: #9d1d27 !important;
     border-color: #9d1d27 !important;
 }

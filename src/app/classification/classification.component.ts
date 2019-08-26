@@ -17,4 +17,15 @@ export class ClassificationComponent implements OnInit {
   open(dailog) {
     this.dialogService.open(dailog);
   }
+
+  toggleFullScreen() {
+    let elem =  document.body; 
+    let methodToBeInvoked = elem.requestFullscreen || 
+     elem['requestFullScreen'] || elem['mozRequestFullscreen'] 
+     || 
+     elem['msRequestFullscreen']; 
+    if(methodToBeInvoked) methodToBeInvoked.call(elem);
+
+}
+
 }
