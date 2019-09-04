@@ -4,11 +4,10 @@
             <nb-card>
                 <nb-card-body>
                   <div class="right-btn-table">
-                        <button nbButton ghost><nb-icon icon="download" ></nb-icon></button>
                         <button nbButton ghost (click)="toggleFullScreen()"><nb-icon icon="maximize" ></nb-icon></button>
                   </div>
                   <nb-tabset>
-                    <nb-tab tabTitle="Waiting for response">
+                    <nb-tab tabTitle="Waiting for response" class="pl-0 pr-0">
                       <div>
                           <div class="heading-table">
                               <h4>Waiting For Response</h4>
@@ -26,95 +25,36 @@
                                   </div>
                               </div>
                           </div>
-                          <table class="table_design" >
-                              <thead class="thead-light">
-                                <tr>
-                                  <!-- <th><nb-checkbox status="success"></nb-checkbox></th> -->
-                                  <th scope="col">Case ID</th>
-                                  <th scope="col">Type</th>
-                                  <th scope="col">Sub-type</th>
-                                  <th scope="col">Subject</th>
-                                  <th scope="col">Modal Classification</th>
-                                  <th scope="col">Date & Time</th>
-                                  <th scope="col">Action</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td scope="row">546567678</td>
-                                  <td>Account Related</td>
-                                  <td>Break Up Of Disbursed  Amount </td>
-                                  <td>complain about a loan.</td>
-                                  <td>Account related!!</td>
-                                  <td>24/04/2019 04:24 PM</td>
-                                  <td><button nbButton shape="round" size="small" status="success" (click)="open(dialog)">Review</button></td>
-                                </tr>
-                                <tr>
-                                  <td scope="row">546567678</td>
-                                  <td>Account Related</td>
-                                  <td>Break Up Of Disbursed  Amount </td>
-                                  <td>complain about a loan.</td>
-                                  <td>Account related!!</td>
-                                  <td>24/04/2019 04:24 PM</td>
-                                  <td><button nbButton shape="round" size="small" status="success" (click)="open(dialog)">Review</button></td>
-                                </tr>
-                                <tr>
-                                  <td scope="row">546567678</td>
-                                  <td>Account Related</td>
-                                  <td>Break Up Of Disbursed  Amount </td>
-                                  <td>complain about a loan.</td>
-                                  <td>Account related!!</td>
-                                  <td>24/04/2019 04:24 PM</td>
-                                  <td><button nbButton shape="round" size="small" status="success" (click)="open(dialog)">Review</button></td>
-                                </tr>
-                                <tr>
-                                  <td scope="row">546567678</td>
-                                  <td>Account Related</td>
-                                  <td>Break Up Of Disbursed  Amount </td>
-                                  <td>complain about a loan.</td>
-                                  <td>Account related!!</td>
-                                  <td>24/04/2019 04:24 PM</td>
-                                  <td><button nbButton shape="round" size="small" status="success" (click)="open(dialog)">Review</button></td>
-                                </tr>
-                                <tr>
-                                  <td scope="row">546567678</td>
-                                  <td>Account Related</td>
-                                  <td>Break Up Of Disbursed  Amount </td>
-                                  <td>complain about a loan.</td>
-                                  <td>Account related!!</td>
-                                  <td>24/04/2019 04:24 PM</td>
-                                  <td><button nbButton shape="round" size="small" status="success" (click)="open(dialog)">Review</button></td>
-                                </tr>
-                                <tr>
-                                  <td scope="row">546567678</td>
-                                  <td>Account Related</td>
-                                  <td>Break Up Of Disbursed  Amount </td>
-                                  <td>complain about a loan.</td>
-                                  <td>Account related!!</td>
-                                  <td>24/04/2019 04:24 PM</td>
-                                  <td><button nbButton shape="round" size="small" status="success" (click)="open(dialog)">Review</button></td>
-                                </tr>
-                                <tr>
-                                  <td scope="row">546567678</td>
-                                  <td>Account Related</td>
-                                  <td>Break Up Of Disbursed  Amount </td>
-                                  <td>complain about a loan.</td>
-                                  <td>Account related!!</td>
-                                  <td>24/04/2019 04:24 PM</td>
-                                  <td><button nbButton shape="round" size="small" status="success" (click)="open(dialog)">Review</button></td>
-                                </tr>
-                                <tr>
-                                  <td scope="row">546567678</td>
-                                  <td>Account Related</td>
-                                  <td>Break Up Of Disbursed  Amount </td>
-                                  <td>complain about a loan.</td>
-                                  <td>Account related!!</td>
-                                  <td>24/04/2019 04:24 PM</td>
-                                  <td><button nbButton shape="round" size="small" status="success" (click)="open(dialog)">Review</button></td>
-                                </tr>
+                              <table [nbTreeGrid]="dataSource" [nbSort]="dataSource" (sort)="updateSort($event)"  class="table_design">
 
-                               </tbody>
-                              </table>
+                                  <tr nbTreeGridHeaderRow *nbTreeGridHeaderRowDef="allColumns">
+
+                                  </tr>
+                                <tr nbTreeGridRow *nbTreeGridRowDef="let row; columns: allColumns">
+                                  
+                                </tr>
+                                
+                                <ng-container *ngFor="let column of defaultColumns; let index = index"
+                                              [nbTreeGridColumnDef]="column"
+                                              [showOn]="getShowOn(index)">
+                                  <th nbTreeGridHeaderCell [nbSortHeader]="getSortDirection(column)" *nbTreeGridHeaderCellDef>
+                                    {{column}}
+                                  </th>
+                                  <td nbTreeGridCell *nbTreeGridCellDef="let row">{{row.data[column] || '-'}}</td>
+                                </ng-container>
+                                
+                                <ng-container [nbTreeGridColumnDef]="customColumn">
+                                  <th nbTreeGridHeaderCell [nbSortHeader]="getSortDirection(customColumn)" *nbTreeGridHeaderCellDef>
+                                   Action
+                                  </th>
+                                  <!-- <th nbTreeGridHeaderCell [nbSortHeader]="getSortDirection(column)" *nbTreeGridHeaderCellDef>
+                                    {{column}}
+                                  </th> -->
+                                  <td nbTreeGridCell *nbTreeGridCellDef="let row">
+                                    <button nbButton  size="small" status="success" (click)="open(dialog)">Review</button>
+                                  </td>
+                                </ng-container>
+                              </table>   
                             <div class="pagination-main" aria-label="Page navigation example">
                                 <nb-select class="nb-select-tag" placeholder="shorting">
                                     <nb-option value="1">0-10</nb-option>
@@ -202,14 +142,27 @@
                                             </nb-select>
                                         </div>
                                     </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="template" class="label"> Review/Comment </label>
+                                            <div class="d-flex btn_design_user">
+                                                <input type="text" nbInput fullWidth placeholder="Review/Comment">
+                                                <button nbButton status="primary" (click)="open(allcomments)">15</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="sub-classification" class="label">Review Comments</label>
-                                            <textarea class="form-control" nbInput value="Message.......">
+                                            <nb-select class="response_tag" placeholder="Response Template">
+                                                <nb-option value="1">Response 1</nb-option>
+                                                <nb-option value="2">Response 2</nb-option>
+                                                <nb-option value="3">Response 3</nb-option>
+                                                <nb-option value="4">Response 4</nb-option>
+                                            </nb-select>
+                                            <textarea class="form-control" nbInput value="Message.......">Hi $User Name$, Your registered mobile no is (6785925081).Recently We sent you following I email on $User Email ID$ from capital first finance domain. Kindly get in touch with us if you still facing this issues Cheers! $Agent Name$
                                             </textarea>
-                                            <label for="sub-classification" class="label">Limit:- 50 words</label>
                                           </div>
                                     </div>
                                     <div class="col-md-6">
@@ -223,11 +176,58 @@ I am Salim Mukti from Kolkata, registered mobile no is (6785925081).Recently I h
                                 
                                 </div>
                                 <div class="bottom_btn">
-                                    <button type="submit" nbButton size="medium" (click)="ref.close()" status="info">Save</button>
+                                    <button type="submit" nbButton size="medium" (click)="ref.close()" status="info">Save & Next</button>
                                 </div>
                               </nb-card-body>
                             </nb-card>
                         </ng-template>
+                        <ng-template #allcomments let-data let-ref="dialogRef" >
+                            <nb-card class="dialog_box comments-box-sec">
+                                <nb-card-header>Action - Review: Case ID -27388599 | 24/04/2019 04:24 PM <span class="hide-tag" (click)="ref.close()">x</span></nb-card-header>
+                                <nb-card-body>
+                                    <div class="row">
+                                       <div class="inside_box_div">
+                                          <h6>Total comments: 234 </h6>
+                                         <div class="user_list_comments">
+                                            <nb-user size="large"
+                                                     name="ANKUR SINGH  (ankur.singh@hdfcbank.com) e"
+                                                     title="31/04/2019 (12:45 PM )"
+                                                     picture="https://via.placeholder.com/50/4479e7/ffffff?Text=IMG">
+                                            </nb-user>
+                                            <p>No records found related Document Number “445ty67sCCT”. Customer purchased this policy two months back and now asking account statement.</p>
+                                          </div>
+                                          <div class="user_list_comments">
+                                              <nb-user size="large"
+                                                       name="ANKUR SINGH  (ankur.singh@hdfcbank.com) e"
+                                                       title="31/04/2019 (12:45 PM )"
+                                                       picture="https://via.placeholder.com/50/4479e7/ffffff?Text=IMG">
+                                              </nb-user>
+                                              <p>No records found related Document Number “445ty67sCCT”. Customer purchased this policy two months back and now asking account statement.</p>
+                                            </div>
+                                            <div class="user_list_comments">
+                                                <nb-user size="large"
+                                                         name="ANKUR SINGH  (ankur.singh@hdfcbank.com) e"
+                                                         title="31/04/2019 (12:45 PM )"
+                                                         picture="https://via.placeholder.com/50/4479e7/ffffff?Text=IMG">
+                                                </nb-user>
+                                                <p>No records found related Document Number “445ty67sCCT”. Customer purchased this policy two months back and now asking account statement.</p>
+                                              </div>
+                                              <div class="user_list_comments">
+                                                  <nb-user size="large"
+                                                           name="ANKUR SINGH  (ankur.singh@hdfcbank.com) e"
+                                                           title="31/04/2019 (12:45 PM )"
+                                                           picture="https://via.placeholder.com/50/4479e7/ffffff?Text=IMG">
+                                                  </nb-user>
+                                                  <p>No records found related Document Number “445ty67sCCT”. Customer purchased this policy two months back and now asking account statement.</p>
+                                                </div>
+                                       </div>
+                                      </div>
+                                  <div class="bottom_btn">
+                                      <button type="submit" nbButton size="medium" (click)="ref.close()" status="info">Back</button>
+                                  </div>
+                                </nb-card-body>
+                              </nb-card>
+                          </ng-template>
                        
                     </nb-tab>
                     <nb-tab tabTitle="Exceptions">

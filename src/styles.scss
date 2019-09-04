@@ -82,3 +82,17 @@ input, select, button, textarea{
     background-color: #9d1d27 !important;
     border-color: #9d1d27 !important;
 }
+
+
+.table_design .nb-tree-grid-header-change-sort-button{
+    text-transform: uppercase !important;
+}
+
+
+.response_tag .select-button, .response_tag .select-button::placeholder{
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    padding-left: 0 !important;
+    background: transparent !important;
+    border: none !important; 
+}

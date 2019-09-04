@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbIconModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { NbThemeModule,NbSelectModule,NbDialogModule, NbInputModule,NbDatepickerModule, NbLayoutModule,NbSidebarModule, NbSidebarService, NbButtonModule,NbActionsModule,NbCardModule,NbMenuModule,NbListModule,NbCheckboxModule, NbTabsetModule,} from '@nebular/theme';
+import { NbUserModule,NbThemeModule,NbTreeGridModule,NbSelectModule,NbDialogModule, NbInputModule,NbDatepickerModule, NbLayoutModule,NbSidebarModule, NbSidebarService, NbButtonModule,NbActionsModule,NbCardModule,NbMenuModule,NbListModule,NbCheckboxModule, NbTabsetModule,} from '@nebular/theme';
 import { NavigationComponent } from './navigation/navigation.component';
 import { LoginComponent } from './auth/login/login.component';
 import { ClassificationComponent } from './classification/classification.component';
@@ -22,6 +22,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     DashboardComponent,
   ],
   imports: [
+    NbUserModule,
+    NbTreeGridModule,
     NbEvaIconsModule,
     NbIconModule,
     BrowserModule,
